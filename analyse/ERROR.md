@@ -51,28 +51,22 @@
 | 2 |        Erreur quelconque lors du chargement         | item page | Une erreur à été rencontré. Veuillez ré-essayer plus tard. (500) |
 
 ---
-                                               |            |                        |
+
 ### créer stuff page
 
-|   |                                      Description                                      |  Location   |          Message          |
-|---|:-------------------------------------------------------------------------------------:|:-----------:|:-------------------------:|
-| 1 |            Lors de la création d'un set de stuff, l'objet est introuvable             | créer stuff | Object introuvable. (401) |
-| 2 | Lors de la création de stuff, le stuff ne s'est pas enregister dans la base de donnée | créer stuff |   Erreur serveur. (500)   |
-| 3 |                                                                                       |             |                           |
-| 4 |                                                                                       |             |                           |
-| 5 |                                                                                       |             |                           |
+|   |                                      Description                                      |  Location   |                             Message                              |
+|---|:-------------------------------------------------------------------------------------:|:-----------:|:----------------------------------------------------------------:|
+| 1 |            Lors de la création d'un set de stuff, l'objet est introuvable             | créer stuff |                    Object introuvable. (401)                     |
+| 2 | Lors de la création de stuff, le stuff ne s'est pas enregister dans la base de donnée | créer stuff | Une erreur à été rencontré. Veuillez ré-essayer plus tard. (500) |
 
 ---
 
 ### gérer stuff page
 
-|   |                                     Description                                      |  Location   |        Message        |
-|---|:------------------------------------------------------------------------------------:|:-----------:|:---------------------:|
-| 1 | Lors de la modification d'un set de stuff, la modification n'est pas prise en compte | gérer stuff | Erreur serveur. (500) |
-| 2 |                                                                                      |             |                       |
-| 3 |                                                                                      |             |                       |
-| 4 |                                                                                      |             |                       |
-| 5 |                                                                                      |             |                       |
+|   |                                     Description                                      | Location  |                             Message                              |
+|---|:------------------------------------------------------------------------------------:|:---------:|:----------------------------------------------------------------:|
+| 1 |                Lors du chargement, rien n'a été trouvé pour le stuff                 | item page |             Rien n'a été trouvé pour ce stuff (401)              |
+| 1 | Lors de la modification d'un set de stuff, la modification n'est pas prise en compte | item page | Une erreur à été rencontré. Veuillez ré-essayer plus tard. (500) |
 
 ---
 
@@ -82,10 +76,6 @@
 |   |             Description             |             Location              |                   Message                   |
 |---|:-----------------------------------:|:---------------------------------:|:-------------------------------------------:|
 | 1 |  Un commentaire qui ne se crée pas  |         créer commentaire         |  Impossible de créer un commentaire. (500)  |
-| 2 | un commentaire qui ne se publi pas  |         créer commentaire         | Impossible de publier un commentaire. (500) |
-| 3 |                                     |                                   |                                             |
-| 4 |                                     |                                   |                                             |
-| 5 |                                     |                                   |                                             |
 
 ---
 
@@ -95,7 +85,4 @@
 |   |                     Description                      |             Location              |                   Message                    |
 |---|:----------------------------------------------------:|:---------------------------------:|:--------------------------------------------:|
 | 1 | L'utilisateur n'arrive pas à modifier un commentaire |         gérer commentaire         | Impossible de modifier le commentaire. (500) |
-| 2 |               Commentaire introuvable                |         gérer commentaire         | Le commentaire est introuvable. (401 / 500)  |
-| 3 |                                                      |                                   |                                              |
-| 4 |                                                      |                                   |                                              |
-| 5 |                                                      |                                   |                                              |
+| 2 |               Commentaire introuvable                |         gérer commentaire         |    Le commentaire est introuvable. (401)     |
