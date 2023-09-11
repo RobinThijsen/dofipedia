@@ -1,7 +1,6 @@
 # ERROR
 ## Dofipedia
 
-<<<<<<< HEAD
 * 101 => email not valid
 * 201 => email incorrect
 * 202 => mdp incorrect
@@ -63,26 +62,26 @@
 
 ### gérer stuff page
 
-|   |                                     Description                                      | Location  |                             Message                              |
-|---|:------------------------------------------------------------------------------------:|:---------:|:----------------------------------------------------------------:|
-| 1 |                Lors du chargement, rien n'a été trouvé pour le stuff                 | item page |             Rien n'a été trouvé pour ce stuff (401)              |
-| 1 | Lors de la modification d'un set de stuff, la modification n'est pas prise en compte | item page | Une erreur à été rencontré. Veuillez ré-essayer plus tard. (500) |
+|   |                                     Description                                      |  Location  |                             Message                              |
+|---|:------------------------------------------------------------------------------------:|:----------:|:----------------------------------------------------------------:|
+| 1 |                Lors du chargement, rien n'a été trouvé pour le stuff                 | stuff page |             Rien n'a été trouvé pour ce stuff (401)              |
+| 1 | Lors de la modification d'un set de stuff, la modification n'est pas prise en compte | stuff page | Une erreur à été rencontré. Veuillez ré-essayer plus tard. (500) |
 
 ---
 
 ### créer commentaire page
 
 
-|   |             Description             |             Location              |                   Message                   |
-|---|:-----------------------------------:|:---------------------------------:|:-------------------------------------------:|
-| 1 |  Un commentaire qui ne se crée pas  |         créer commentaire         |  Impossible de créer un commentaire. (500)  |
+|   |             Description             |     Location      |                   Message                   |
+|---|:-----------------------------------:|:-----------------:|:-------------------------------------------:|
+| 1 |  Un commentaire qui ne se crée pas  | créer commentaire |  Impossible de créer un commentaire. (500)  |
 
 ---
 
 ## gérer commentaire page
 
 
-|   |                     Description                      |             Location              |                   Message                    |
-|---|:----------------------------------------------------:|:---------------------------------:|:--------------------------------------------:|
-| 1 | L'utilisateur n'arrive pas à modifier un commentaire |         gérer commentaire         | Impossible de modifier le commentaire. (500) |
-| 2 |               Commentaire introuvable                |         gérer commentaire         |    Le commentaire est introuvable. (401)     |
+|   |                     Description                      |      Location      |                   Message                    |
+|---|:----------------------------------------------------:|:------------------:|:--------------------------------------------:|
+| 1 | L'utilisateur n'arrive pas à modifier un commentaire | gérer commentaire  | Impossible de modifier le commentaire. (500) |
+| 2 |               Commentaire introuvable                | gérer commentaire  |    Le commentaire est introuvable. (401)     |
