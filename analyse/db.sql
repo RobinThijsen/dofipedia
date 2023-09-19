@@ -29,7 +29,8 @@ create table `stuff` (
     trophy6_id varchar(60) null,
     familier_id varchar(60) null,
     mount_id varchar(60) null,
-    user_id integer references user(user_id)
+    user_id integer references user(user_id),
+    image_url varchar(255) not null
 );
 
 create table `comment` (
