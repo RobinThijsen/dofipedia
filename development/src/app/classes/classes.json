@@ -1,0 +1,80 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "name": "Féca"
+    },
+    {
+      "id": 2,
+      "name": "Osamodas"
+    },
+    {
+      "id": 3,
+      "name": "Enutrof"
+    },
+    {
+      "id": 4,
+      "name": "Sram"
+    },
+    {
+      "id": 5,
+      "name": "Xélor"
+    },
+    {
+      "id": 6,
+      "name": "Ecaflip"
+    },
+    {
+      "id": 7,
+      "name": "Eniripsa"
+    },
+    {
+      "id": 8,
+      "name": "Iop"
+    },
+    {
+      "id": 9,
+      "name": "Crâ"
+    },
+    {
+      "id": 10,
+      "name": "Sadida"
+    },
+    {
+      "id": 11,
+      "name": "Sacrieur"
+    },
+    {
+      "id": 12,
+      "name": "Pandawa"
+    },
+    {
+      "id": 13,
+      "name": "Roublard"
+    },
+    {
+      "id": 14,
+      "name": "Zobal"
+    },
+    {
+      "id": 15,
+      "name": "Steamer"
+    },
+    {
+      "id": 16,
+      "name": "Eliotrope"
+    },
+    {
+      "id": 17,
+      "name": "Huppermage"
+    },
+    {
+      "id": 18,
+      "name": "Ouginak"
+    },
+    {
+      "id": 19,
+      "name": "Forgelance"
+    }
+  ]
+}
