@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Link from 'next/link'
-
-const inter = Inter({ subsets: ['latin'] })
+import '../../public/css/style.css'
+import Image from "next/image"
+import Logo from '../../public/images/logo.png'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,13 +15,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en"
+    <html lang="en">
       <body>
       <header>
-          <Link href={`/`}>Home</Link>
-          <Link href={`/panoplie`}>Panoplie</Link>
+          <Link href={`/listes`}>Listes</Link>
+          <Link href={`/panoplie`}>Stuffs</Link>
+          <Link href={`/`}><Image src={Logo} alt="" /></Link>
+          <Link href={`/login`}>connexion</Link>
+          <Link href={`/register`}>nous rejoindre</Link>
       </header>
-      <main>{children}</main>
+      {children}
       </body>
     </html>
   )

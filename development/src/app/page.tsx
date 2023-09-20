@@ -1,27 +1,27 @@
-import Link from "next/link"
+'use client'
+import Portal from '../../public/images/ZAAP-step1.jpg'
+import Portal2 from '../../public/images/ZAAP-step2.jpg'
+import { useState } from "react"
 
-const getData = async () => {
-    const res = await fetch("https://api.dofusdb.fr/items?$limit=20")
-    return res.json()
-};
+export default function Home() {
+    const [hover, setHover] = useState(false)
 
-export default async function Home() {
-    const data = await getData()
+    const isntHover = {
+        backgroundImage: `url(${Portal.src})`
+    }
+
+    const isHover = {
+        backgroundImage: `url(${Portal2.src})`
+    }
 
   return (
-    <>
-        <h1>Data</h1>
-        <section>
-            <ul>
-                {data.data.map((d) => (
-                        <Link href={`/item/${ d.id }`}>
-                            <p>{ d.name.fr }</p>
-                            <img src={ d.img } alt="wi" />
-                            <p>{ d.description.fr }</p>
-                        </Link>
-                    ))}
-            </ul>
-        </section>
-    </>
+    <main className="home">
+        <section
+            className="portal"
+            style={hover ? isHover : isntHover}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+        ></section>
+    </main>
   );
 }

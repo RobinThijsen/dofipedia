@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+
+  main {
+    margin-top: 70px;
+    width: 100vw;
+    min-height: 100vh;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input, button, textarea, select {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+cite {
+  font-style: normal;
+}
