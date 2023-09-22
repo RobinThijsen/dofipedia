@@ -269,7 +269,7 @@ main.home {
 }
 main.home section.portal {
   width: 100%;
-  min-height: 90.5vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -470,62 +470,96 @@ main.login section button:hover {
 
 main.register {
   width: 100vw;
-  height: auto;
-}
-main.register section.register-page {
-  display: flex;
-}
-main.register section.register-page div.form-register {
-  text-align: center;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  width: 30vw;
-  height: auto;
-  background: rgb(148, 56, 1);
-}
-main.register section.register-page div.form-register h3 {
-  color: white;
-  font-size: 25px;
-  margin-top: 4vh;
-}
-main.register section.register-page div.form-register form div {
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-}
-main.register section.register-page div.form-register form div input {
-  border: rgb(222, 67, 18) 2px solid;
-  width: 18vw;
-  height: 6vh;
-  padding-left: 1em;
-}
-main.register section.register-page div.form-register form .pass-link {
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  font-size: 10px;
-  color: white;
-  padding: 0 6vw 0 6vw;
-}
-main.register section.register-page div.form-register form .pass-link a {
-  color: white;
-}
-main.register section.register-page div.form-register form .btn {
-  width: auto;
-  height: auto;
-}
-main.register section.register-page div.form-register form .btn button {
-  border: #101010 0px solid;
-  width: 9em;
-  height: 2.5em;
-  font-size: 20px;
-  color: white;
-  background: rgb(238, 118, 80);
-}
-main.register section.register-page div.bg-register img {
-  width: 70vw;
   height: 100vh;
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  padding: 0;
+  display: flex;
+  justify-content: right;
+}
+main.register section {
+  width: 40%;
+  height: 100%;
+  background: #943801;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  color: #F9F9F9;
+  padding: 0 8vw;
+}
+main.register section h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+main.register section h2::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #F9F9F9;
+}
+main.register section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+main.register section form fieldset {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+main.register section form fieldset label {
+  position: absolute;
+  top: 0.7rem;
+  left: 1.5em;
+  color: #DE4312;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  background: #943801;
+  padding: 0.3em;
+}
+main.register section form fieldset input {
+  width: 100%;
+  border: 2px solid #DE4312;
+  padding: 1rem;
+  color: #F9F9F9;
+  transition: all 0.3s ease;
+}
+main.register section form fieldset input:hover, main.register section form fieldset input:focus {
+  border-color: #F9F9F9;
+}
+main.register section form fieldset input:focus ~ label, main.register section form fieldset input:not([value=""]) ~ label {
+  top: -0.7rem;
+  left: 1.1rem;
+  color: #F9F9F9;
+}
+main.register section div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+main.register section div a {
+  color: #DE4312;
+}
+main.register section button {
+  background: #F77413;
+  padding: 1rem;
+  border: 2px solid #F77413;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #F9F9F9;
+}
+main.register section button:hover {
+  background: transparent;
 }
 
 main.listes {
