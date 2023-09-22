@@ -12,11 +12,15 @@ const getName = async (effectId: string) => {
     return name
 }
 
-export default async function Effect(props: { effectFrom: number, effectTo: number, effectId: string}) {
+export default async function Effect(props: { effectFrom: string, effectTo: string, effectId: string}) {
 
     return (
-        <li>
-            {`${props.effectFrom} à ${props.effectTo} ${await getName(props.effectId)}`}
-        </li>
+        <>
+            {
+                props.effectTo != "0"
+                    ? <li>{ `${props.effectFrom} à ${props.effectTo} ${await getName(props.effectId)}` }</li>
+                    : <li>{ `${props.effectFrom} ${await getName(props.effectId)}` }</li>
+            }
+        </>
     )
 }

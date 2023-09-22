@@ -21,7 +21,7 @@ export default async function RootLayout({
     const consumers = await getItemTypes("6")
 
   return (
-    <html lang="en">
+    <html lang="fr">
       <body>
       <header>
           <ul>

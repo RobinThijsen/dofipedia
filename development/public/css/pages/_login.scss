@@ -1,63 +1,103 @@
-main.login{
+main.login {
   width: 100vw;
-  height: auto;
-  section.login-page{
+  height: 100vh;
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  padding: 0;
+
+  section {
+    width: 40%;
+    height: 100%;
+    background: $green-blue;
     display: flex;
-    div.form-login{
-      text-align: center;
-      flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+    color: $white;
+    padding: 0 8vw;
+
+    h2 {
       display: flex;
-      justify-content: center;
-      width: 30vw;
-      height: auto;
-      background: rgba(10, 82, 69, 1);
-      h3{
-        color: white;
-        font-size: 25px;
-        margin-top: 4vh;
+      flex-direction: column;
+      gap: 5px;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: $white;
       }
-      form{
-        div{
-          display: flex;
-          justify-content: center;
-          margin-top: 2em;
-          input{
-            border: rgba(29, 167, 142, 1) 2px solid;
-            width: 18vw;
-            height: 6vh;
-            padding-left: 1em;
-          }
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4vh;
+
+      fieldset {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        label {
+          position: absolute;
+          top: .7rem;
+          left: 1.5em;
+          color: $green-blue-light;
+          letter-spacing: .5px;
+          transition: $tr-3-a;
+          background: $green-blue;
+          padding: .3em;
         }
-        .pass-link{
-          display: flex;
-          text-align: center;
-          justify-content: space-between;
-          font-size: 10px;
-          color: white;
-          padding: 0 6vw 0 6vw;
-          a{
-            color: white;
+
+        input {
+          width: 100%;
+          border: 2px solid $green-blue-light;
+          padding: 1rem;
+          color: $white;
+          transition: $tr-3-a;
+
+          &:hover, &:focus {
+            border-color: $white;
           }
-        }
-        .btn{
-          width: auto;
-          height: auto;
-          button{
-            border: #101010 0px solid;
-            width: 8em;
-            height: 2.5em;
-            font-size: 20px;
-            color: white;
-            background: rgba(29, 167, 142, 0.9);
+
+          &:focus~label, &:not([value=""])~label {
+            top: -.7rem;
+            left: 1.1rem;
+            color: $white;
           }
         }
       }
     }
-    div.bg-login{
-      img{
-        width: 70vw;
-        height: 100vh;
-        background-position: right;
+
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .8rem;
+
+      a {
+        color: $green-blue-light;
+      }
+    }
+
+    button {
+      background: $green-blue-light;
+      padding: 1rem;
+      border: 2px solid $green-blue-light;
+      transition: $tr-3-a;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: $white;
+
+      &:hover {
+        background: transparent;
       }
     }
   }

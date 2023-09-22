@@ -1,8 +1,12 @@
 main.home {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: $dark-background;
 
   section.portal {
     width: 100%;
-    min-height: 100vh;
+    min-height: 90.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,48 +59,57 @@ main.home {
 
   section.class-list {
     background: rgb(4,32,7);
-   h2{
-     text-align: center;
-     padding-top: 10vh;
-     color: white;
-     font-size: 35px;
-   }
-   div.class{
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     gap: 5vh;
-     padding: 10vw;
-     figure{
-       img{
-         width: 100%;
-         height: auto;
-       }
-       article {
-         width: 100%;
-         padding: 3vh 1em;
-         background: rgb(41,83,50);
-         h3 {
-           color: white;
+    border-top: 1px solid $green-border;
+
+     h2{
+       text-align: center;
+       padding-top: 10vh;
+       color: white;
+       font-size: 35px;
+     }
+
+     div.class {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 5vh;
+       padding: 10vw;
+       figure{
+         img{
+           width: 100%;
+           height: auto;
+         }
+         article {
+           width: 100%;
+           padding: 3vh 1em;
+           background: rgb(41,83,50);
+           h3 {
+             color: white;
+           }
          }
        }
      }
-   }
-    div.button-ShowMore{
-      height: 10vw;
-      text-align: center;
-      button{
-        color: white;
-        font-size: 20px;
+
+      div.button-ShowMore{
+        height: 10vw;
+        text-align: center;
+
+        button{
+          color: white;
+          font-size: 20px;
+        }
       }
-    }
   }
+
   section.ladder{
+    border-top: 1px solid $dark-red;
+
     div{
       background: rgb(41,16,0,70%);
       width: 10vw;
       height: auto;
       position: absolute;
     }
+
     img{
       height: auto;
       width: 100vw;

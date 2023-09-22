@@ -34,7 +34,7 @@ ul {
   list-style-type: none;
 }
 
-input, button, textarea, select {
+input, button, textarea, select, fieldset {
   border: none;
   background: none;
   outline: none;
@@ -244,9 +244,15 @@ main.item section:last-child {
   background: hsla(0, 0%, 7%, 0.6);
 }
 
+main.home {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: hsl(0, 0%, 7%);
+}
 main.home section.portal {
   width: 100%;
-  min-height: 100vh;
+  min-height: 90.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -287,6 +293,7 @@ main.home section.portal:hover img.light-zaap {
 }
 main.home section.class-list {
   background: rgb(4, 32, 7);
+  border-top: 1px solid #96A71D;
 }
 main.home section.class-list h2 {
   text-align: center;
@@ -320,6 +327,9 @@ main.home section.class-list div.button-ShowMore button {
   color: white;
   font-size: 20px;
 }
+main.home section.ladder {
+  border-top: 1px solid #DE4312;
+}
 main.home section.ladder div {
   background: rgba(41, 16, 0, 0.7);
   width: 10vw;
@@ -342,63 +352,94 @@ main.home section.ladder img {
 }
 main.login {
   width: 100vw;
-  height: auto;
-}
-main.login section.login-page {
-  display: flex;
-}
-main.login section.login-page div.form-login {
-  text-align: center;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  width: 30vw;
-  height: auto;
-  background: rgb(10, 82, 69);
-}
-main.login section.login-page div.form-login h3 {
-  color: white;
-  font-size: 25px;
-  margin-top: 4vh;
-}
-main.login section.login-page div.form-login form div {
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-}
-main.login section.login-page div.form-login form div input {
-  border: rgb(29, 167, 142) 2px solid;
-  width: 18vw;
-  height: 6vh;
-  padding-left: 1em;
-}
-main.login section.login-page div.form-login form .pass-link {
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  font-size: 10px;
-  color: white;
-  padding: 0 6vw 0 6vw;
-}
-main.login section.login-page div.form-login form .pass-link a {
-  color: white;
-}
-main.login section.login-page div.form-login form .btn {
-  width: auto;
-  height: auto;
-}
-main.login section.login-page div.form-login form .btn button {
-  border: #101010 0px solid;
-  width: 8em;
-  height: 2.5em;
-  font-size: 20px;
-  color: white;
-  background: rgba(29, 167, 142, 0.9);
-}
-main.login section.login-page div.bg-login img {
-  width: 70vw;
   height: 100vh;
+  background-size: cover;
   background-position: right;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+main.login section {
+  width: 40%;
+  height: 100%;
+  background: #0A5245;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  color: #F9F9F9;
+  padding: 0 8vw;
+}
+main.login section h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+main.login section h2::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #F9F9F9;
+}
+main.login section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+main.login section form fieldset {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+main.login section form fieldset label {
+  position: absolute;
+  top: 0.7rem;
+  left: 1.5em;
+  color: #1DA78E;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  background: #0A5245;
+  padding: 0.3em;
+}
+main.login section form fieldset input {
+  width: 100%;
+  border: 2px solid #1DA78E;
+  padding: 1rem;
+  color: #F9F9F9;
+  transition: all 0.3s ease;
+}
+main.login section form fieldset input:hover, main.login section form fieldset input:focus {
+  border-color: #F9F9F9;
+}
+main.login section form fieldset input:focus ~ label, main.login section form fieldset input:not([value=""]) ~ label {
+  top: -0.7rem;
+  left: 1.1rem;
+  color: #F9F9F9;
+}
+main.login section div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+main.login section div a {
+  color: #1DA78E;
+}
+main.login section button {
+  background: #1DA78E;
+  padding: 1rem;
+  border: 2px solid #1DA78E;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #F9F9F9;
+}
+main.login section button:hover {
+  background: transparent;
 }
 
 main.register {
