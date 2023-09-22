@@ -2,16 +2,133 @@ header {
   width: 100%;
   height: 70px;
   background: $darkest-background;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr .2fr 1fr;
   gap: 2vw;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10000;
 
-  a {
+  &::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: $green-border;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: -1;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2vw;
+
+    &.left {
+      justify-content: flex-start;
+    }
+
+    li#listes-btn:hover menu {
+      height: 80vh;
+      transition-delay: 0s;
+
+      div {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: .2s;
+      }
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  menu {
+    width: 100vw;
+    height: 0px;
+    background: $dark-background-90;
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 70px;
+    transition: $tr-3-a;
+    transition-delay: .2s;
+    display: flex;
+    gap: 1.5vw;
+
+    img {
+      position: absolute;
+      opacity: 0;
+      width: 20vw!important;
+      height: auto!important;
+      right: 3vw;
+      z-index: -1;
+      bottom: 0;
+    }
+
+    div {
+      padding: 3vh 3vw;
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+      transition: $tr-3-a;
+      transition-delay: 0s;
+
+      ul {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: .5rem;
+        list-style-type: disc;
+
+        li a {
+          font-family: 'Roboto', sans-serif;
+          font-size: .9rem;
+        }
+      }
+    }
+  }
+
+  a, li {
     color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-family: "Bebas Neue", sans-serif;
+    cursor: pointer;
+
+    img {
+      width: 134.7px;
+      height: 94px;
+      transform: translateY(-5px);
+    }
+
+    svg {
+      fill: $white;
+      transition: $tr-3-a;
+    }
+
+    &:hover, &.active {
+      color: $green-border;
+
+      svg {
+        fill: $green-border;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.active svg {
+      transform: rotate(180deg);
+    }
   }
 }

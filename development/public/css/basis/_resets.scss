@@ -9,9 +9,10 @@
 body {
   width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
 
   main {
-    margin-top: 70px;
+    padding-top: 70px;
     width: 100vw;
     min-height: 100vh;
   }

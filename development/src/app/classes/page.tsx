@@ -1,15 +1,28 @@
-import Classes from '../../../public/classes.json'
+import Image from "next/image"
 
-export default function Page() {
+const getData = async () => {
+    const res = await fetch("https://api.dofusdb.fr/breeds?$limit=20")
+    return res.json()
+}
+
+export default async function Page() {
+    const data = await getData()
+    console.log(data)
 
     return (
         <>
             <ul>
-                {Classes.map((classe) => (
+                {data.data.map((d) => (
                     <li>
-                        <h3>{ classe.name }</h3>
-                        <Image src={`${classe.id}.jpg`} />
-                        <img src={`../../../public/images/${classe.id}.jpg`} />
+                        <h3>{ d.longName.fr }</h3>
+                        <img
+                            src={ d.img }
+                            alt={ d.shortName.fr + " image"}
+                            width="100"
+                            height="100"
+                        />
+                        <p>{ d.gameplayDescription.fr }</p>
+                        <p>{ d.description.fr }</p>
                     </li>
                 ))}
             </ul>

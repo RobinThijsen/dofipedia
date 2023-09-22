@@ -1,0 +1,113 @@
+main.listes {
+  width: 100%;
+  min-height: 100vh;
+  background: $dark-green;
+
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      min-height: 30vh;
+      background: $dark-background-90;
+    }
+
+    &:last-child {
+      min-height: 100vh;
+    }
+
+    ul {
+      width: 100%;
+      padding: 5vh 3vw;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 115px;
+
+      li a {
+        width: 100px;
+        height: 100px;
+        background: $dark-background-90;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        border: 1px solid $green-border;
+        transition: $tr-5-a;
+        transition-delay: .3s;
+        position: absolute;
+        align-items: flex-end;
+
+        figure {
+          width: 100px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: $tr-3-a;
+
+          p {
+            display: none;
+            color: $white;
+            font-size: .9rem;
+          }
+
+          img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+          }
+        }
+
+        article {
+          width: 330px;
+          opacity: 0;
+          visibility: hidden;
+          transition: $tr-5-a;
+          transition-delay: 0s;
+          padding: 1rem;
+          color: $white;
+
+          p:last-child {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+          }
+        }
+
+        &:hover {
+          width: 330px;
+          height: 215px;
+          z-index: 100;
+          background: $dark-background;
+          transition-delay: 0s;
+
+          figure {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            p {
+              display: inline;
+            }
+
+            img {
+              background: $dark-background-90;
+              border: 1px solid $green-border;
+            }
+          }
+
+          article {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: .3s;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,11 @@
   "classes": [
     {
       "id": 1,
-      "name": "Féca"
+      "name": "Féca",
+      "slog": "Combattant imprévisible",
+      "description": "Les Ecaflips sont des guerriers joueurs qui se fourrent dans les endroits où l'on peut gagner gros, et perdre beaucoup… Un Ecaflip bien dans sa peau parie sans arrêt, pour tout et pour rien. Mais attention, il prend le jeu très au sérieux et ira même jusqu'à risquer sa vie sur un jet de dés pour tenter de remporter la mise…",
+      "video_url": "https://www.youtube.com/watch?v=JAhil1C--8w&t=1s",
+      "roles": ["", "", ""]
     },
     {
       "id": 2,

@@ -1,10 +1,65 @@
 main.home {
 
   section.portal {
-    height: 753px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: $tr-3-a;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    audio {
+      position: relative;
+      z-index: 1000;
+    }
+
+    img {
+      width: 100vw;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      transition: all 1s ease;
+
+      &:first-child {
+        display: inline;
+      }
+
+      &.open-zaap, &.light-zaap, &.light-zaap-aura {
+        opacity: 0;
+      }
+
+      &.light-zaap {
+        width: 30vw;
+        top: 25vh;
+      }
+
+      &.light-zaap-aura {
+        width: 60vw;
+        top: -5vh;
+      }
+    }
+
+    &:hover {
+      img.default-zaap {
+        opacity: 0;
+      }
+
+      img.open-zaap, img.light-zaap, img.light-zaap-aura {
+        opacity: 1;
+      }
+
+      img.light-zaap {
+        animation: infiniteLoop 15s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes infiniteLoop {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(720deg);
   }
 }
