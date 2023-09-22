@@ -162,6 +162,23 @@ header a.active svg, header li.active svg {
   transform: rotate(180deg);
 }
 
+a.btn-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(0, 0%, 7%);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 200;
+  width: 305px;
+  height: 111px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+}
+
 main.item {
   height: 100vh;
   display: grid;
@@ -257,6 +274,9 @@ main.home section.portal {
   align-items: center;
   justify-content: center;
 }
+main.home section.portal a.btn-img {
+  opacity: 0;
+}
 main.home section.portal audio {
   position: relative;
   z-index: 1000;
@@ -285,8 +305,14 @@ main.home section.portal img.light-zaap-aura {
 main.home section.portal:hover img.default-zaap {
   opacity: 0;
 }
-main.home section.portal:hover img.open-zaap, main.home section.portal:hover img.light-zaap, main.home section.portal:hover img.light-zaap-aura {
+main.home section.portal:hover img.open-zaap, main.home section.portal:hover img.light-zaap, main.home section.portal:hover img.light-zaap-aura, main.home section.portal:hover a.btn-img {
   opacity: 1;
+}
+main.home section.portal:hover a.btn-img {
+  transform: translateY(30vh);
+}
+main.home section.portal:hover a.btn-img:hover {
+  transform: translateY(30vh) scale(1.1, 1.1);
 }
 main.home section.portal:hover img.light-zaap {
   animation: infiniteLoop 15s linear infinite;

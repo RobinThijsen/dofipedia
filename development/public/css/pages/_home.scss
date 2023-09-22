@@ -11,6 +11,10 @@ main.home {
     align-items: center;
     justify-content: center;
 
+    a.btn-img {
+      opacity: 0;
+    }
+
     audio {
       position: relative;
       z-index: 1000;
@@ -47,8 +51,16 @@ main.home {
         opacity: 0;
       }
 
-      img.open-zaap, img.light-zaap, img.light-zaap-aura {
+      img.open-zaap, img.light-zaap, img.light-zaap-aura, a.btn-img {
         opacity: 1;
+      }
+
+      a.btn-img {
+        transform: translateY(30vh);
+
+        &:hover {
+          transform: translateY(30vh) scale(1.1, 1.1);
+        }
       }
 
       img.light-zaap {

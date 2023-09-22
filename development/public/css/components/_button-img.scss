@@ -1,0 +1,16 @@
+a.btn-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $dark-background;
+  transition: $tr-3-a;
+  position: relative;
+  z-index: 200;
+  width: 305px;
+  height: 111px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+}

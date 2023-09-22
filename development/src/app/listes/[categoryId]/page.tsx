@@ -6,11 +6,17 @@ const getData = async (categoryId: string) => {
 
 export default async function Page({ params }: { params: { categoryId: string } }) {
     const data = await getData(params.categoryId)
-    const loader = <li>Loading...</li>
 
     return (
         <main className="listes">
             <section>
+                <form>
+                    <fieldset>
+                        <input type="search" name="search" id="search" />
+                        <label>Recherche</label>
+                    </fieldset>
+                    <button type="submit">Rechercher</button>
+                </form>
 
             </section>
             <section>

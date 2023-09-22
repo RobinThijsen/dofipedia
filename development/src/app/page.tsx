@@ -1,6 +1,6 @@
 import Image from "next/image";
 import BackgroundLadder from "../../public/images/background-classement.jpg"
-
+import button from '../../public/images/btn-play1-over.png'
 
 const getDataClass = async () => {
     const res = await fetch(`https://api.dofusdb.fr/breeds?$limit=20`)
@@ -8,8 +8,11 @@ const getDataClass = async () => {
 }
 
 export default async function Home() {
-
     const data = await getDataClass()
+
+    const styling = {
+        backgroundImage: `url(${button.src})`
+    }
 
     return (
     <main className="home">
@@ -56,6 +59,7 @@ export default async function Home() {
                 width="1200"
                 height="407"
             />
+            <a style={styling} className="btn-img" href="https://www.dofus.com/fr/prehome" target="_blank">vers dofus</a>
         </section>
         <section className="class-list">
             <h2>Classes</h2>
