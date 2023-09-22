@@ -1,0 +1,60 @@
+main.home {
+
+  section.portal {
+    height: 753px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: $tr-3-a;
+  }
+  section.class-list {
+    background: rgb(4,32,7);
+   h2{
+     text-align: center;
+     padding-top: 10vh;
+     color: white;
+     font-size: 35px;
+   }
+   div.class{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 5vh;
+     padding: 10vw;
+     figure{
+       img{
+         width: 100%;
+         height: auto;
+       }
+       article {
+         width: 100%;
+         padding: 3vh 1em;
+         background: rgb(41,83,50);
+         h3 {
+           color: white;
+         }
+       }
+     }
+   }
+    div.button-ShowMore{
+      height: 10vw;
+      text-align: center;
+      button{
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+  section.ladder{
+    div{
+      background: rgb(41,16,0,70%);
+      width: 10vw;
+      height: auto;
+      position: absolute;
+    }
+    img{
+      height: auto;
+      width: 100vw;
+      position: relative;
+    }
+  }
+}

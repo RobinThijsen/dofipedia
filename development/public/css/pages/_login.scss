@@ -1,0 +1,64 @@
+main.login{
+  width: 100vw;
+  height: auto;
+  section.login-page{
+    display: flex;
+    div.form-login{
+      text-align: center;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      width: 30vw;
+      height: auto;
+      background: rgba(10, 82, 69, 1);
+      h3{
+        color: white;
+        font-size: 25px;
+        margin-top: 4vh;
+      }
+      form{
+        div{
+          display: flex;
+          justify-content: center;
+          margin-top: 2em;
+          input{
+            border: rgba(29, 167, 142, 1) 2px solid;
+            width: 18vw;
+            height: 6vh;
+            padding-left: 1em;
+          }
+        }
+        .pass-link{
+          display: flex;
+          text-align: center;
+          justify-content: space-between;
+          font-size: 10px;
+          color: white;
+          padding: 0 6vw 0 6vw;
+          a{
+            color: white;
+          }
+        }
+        .btn{
+          width: auto;
+          height: auto;
+          button{
+            border: #101010 0px solid;
+            width: 8em;
+            height: 2.5em;
+            font-size: 20px;
+            color: white;
+            background: rgba(29, 167, 142, 0.9);
+          }
+        }
+      }
+    }
+    div.bg-login{
+      img{
+        width: 70vw;
+        height: 100vh;
+      }
+    }
+  }
+}
+

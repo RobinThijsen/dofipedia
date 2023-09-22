@@ -1,0 +1,80 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "name": "LE BOUCLIER DE FECA"
+    },
+    {
+      "id": 2,
+      "name": "LE FOUET D'OSAMODAS "
+    },
+    {
+      "id": 3,
+      "name": "LES DOIGTS D'ENUTROF"
+    },
+    {
+      "id": 4,
+      "name": "L'OMBRE DE SRAM"
+    },
+    {
+      "id": 5,
+      "name": "LE SABLIER DE XELOR"
+    },
+    {
+      "id": 6,
+      "name": "LA PIECE D'ECAFLIP"
+    },
+    {
+      "id": 7,
+      "name": "LES MAINS D'ENIRIPSA"
+    },
+    {
+      "id": 8,
+      "name": "LE COEUR D'IOP"
+    },
+    {
+      "id": 9,
+      "name": "L'ETENDUE DE CRÂ"
+    },
+    {
+      "id": 10,
+      "name": "LE SOULIER DE SADIDA"
+    },
+    {
+      "id": 11,
+      "name": "LE SANG DE SACRIEUR"
+    },
+    {
+      "id": 12,
+      "name": "LA CHOPINE DE PANDAWA"
+    },
+    {
+      "id": 13,
+      "name": "LA RUSE DU ROUBLARD"
+    },
+    {
+      "id": 14,
+      "name": "LE MASQUE DU ZOBAL"
+    },
+    {
+      "id": 15,
+      "name": "LA VAPEUR DE STEAMER"
+    },
+    {
+      "id": 16,
+      "name": "LE PORTAIL ELIOTROPE"
+    },
+    {
+      "id": 17,
+      "name": "LA RUNE D'HUPPERMAGE"
+    },
+    {
+      "id": 18,
+      "name": "LA RAGE D'OUGINAK"
+    },
+    {
+      "id": 19,
+      "name": "L'HERITAGE DE FORGELANCE"
+    }
+  ]
+}

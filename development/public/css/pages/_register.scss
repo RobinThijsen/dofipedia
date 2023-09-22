@@ -1,0 +1,63 @@
+main.register{
+  width: 100vw;
+  height: auto;
+  section.register-page{
+    display: flex;
+    div.form-register{
+      text-align: center;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      width: 30vw;
+      height: auto;
+      background: rgba(148, 56, 1, 1);
+      h3{
+        color: white;
+        font-size: 25px;
+        margin-top: 4vh;
+      }
+      form{
+        div{
+          display: flex;
+          justify-content: center;
+          margin-top: 2em;
+          input{
+            border: rgba(222, 67, 18, 1) 2px solid;
+            width: 18vw;
+            height: 6vh;
+            padding-left: 1em;
+          }
+        }
+        .pass-link{
+          display: flex;
+          text-align: center;
+          justify-content: space-between;
+          font-size: 10px;
+          color: white;
+          padding: 0 6vw 0 6vw;
+          a{
+            color: white;
+          }
+        }
+        .btn{
+          width: auto;
+          height: auto;
+          button{
+            border: #101010 0px solid;
+            width: 9em;
+            height: 2.5em;
+            font-size: 20px;
+            color: white;
+            background: rgba(238, 118, 80, 1);
+          }
+        }
+      }
+    }
+    div.bg-register{
+      img{
+        width: 70vw;
+        height: 100vh;
+      }
+    }
+  }
+}

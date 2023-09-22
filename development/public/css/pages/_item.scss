@@ -1,0 +1,15 @@
+main.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../images/background-item.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  section {
+    width: 40%;
+    height: 90%;
+    border: 2px solid $green-border;
+  }
+}
