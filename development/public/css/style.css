@@ -246,7 +246,7 @@ main.item section:last-child {
 
 main.home section.portal {
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,7 +352,7 @@ main.login section.login-page div.form-login {
   flex-direction: column;
   display: flex;
   justify-content: center;
-  width: 30vw;
+  width: 40vw;
   height: auto;
   background: rgb(10, 82, 69);
 }
@@ -368,7 +368,7 @@ main.login section.login-page div.form-login form div {
 }
 main.login section.login-page div.form-login form div input {
   border: rgb(29, 167, 142) 2px solid;
-  width: 18vw;
+  width: 20vw;
   height: 6vh;
   padding-left: 1em;
 }
@@ -378,7 +378,7 @@ main.login section.login-page div.form-login form .pass-link {
   justify-content: space-between;
   font-size: 10px;
   color: white;
-  padding: 0 6vw 0 6vw;
+  padding: 0 10vw 0 10vw;
 }
 main.login section.login-page div.form-login form .pass-link a {
   color: white;
@@ -396,7 +396,7 @@ main.login section.login-page div.form-login form .btn button {
   background: rgba(29, 167, 142, 0.9);
 }
 main.login section.login-page div.bg-login img {
-  width: 70vw;
+  width: 60vw;
   height: 100vh;
   background-position: right;
 }
@@ -413,7 +413,7 @@ main.register section.register-page div.form-register {
   flex-direction: column;
   display: flex;
   justify-content: center;
-  width: 30vw;
+  width: 40vw;
   height: auto;
   background: rgb(148, 56, 1);
 }
@@ -429,7 +429,7 @@ main.register section.register-page div.form-register form div {
 }
 main.register section.register-page div.form-register form div input {
   border: rgb(222, 67, 18) 2px solid;
-  width: 18vw;
+  width: 20vw;
   height: 6vh;
   padding-left: 1em;
 }
@@ -439,7 +439,7 @@ main.register section.register-page div.form-register form .pass-link {
   justify-content: space-between;
   font-size: 10px;
   color: white;
-  padding: 0 6vw 0 6vw;
+  padding: 0 10vw 0 10vw;
 }
 main.register section.register-page div.form-register form .pass-link a {
   color: white;
@@ -457,7 +457,7 @@ main.register section.register-page div.form-register form .btn button {
   background: rgb(238, 118, 80);
 }
 main.register section.register-page div.bg-register img {
-  width: 70vw;
+  width: 60vw;
   height: 100vh;
 }
 

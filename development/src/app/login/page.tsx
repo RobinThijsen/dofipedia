@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import BackgroundLogin from "../../../public/images/BG-login.jpeg"
 
 export default function login(){
 
-    const styleLogin = {
-        backgroundImage: `url (${BackgroundLogin.src})`
-    }
 
     return(
         <main className="login">
