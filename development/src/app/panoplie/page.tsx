@@ -12,7 +12,7 @@ export default async function Page() {
         <main>
             <section>
                 {data.data.map((d) => (
-                    <ul>
+                    <ul id={ d.id }>
                         {d.items.map((item) => (
                             <li><Link href={`/item/${ item.id }`}>{ item.name.fr }</Link></li>
                         ))}

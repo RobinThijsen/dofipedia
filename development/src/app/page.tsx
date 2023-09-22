@@ -1,7 +1,5 @@
 import Image from "next/image";
 import BackgroundLadder from "../../public/images/background-classement.jpg"
-//import {useState} from "react";
-//import {useEffect} from "react";
 
 
 const getDataClass = async () => {
@@ -15,6 +13,50 @@ export default async function Home() {
 
     return (
     <main className="home">
+        <section
+            className="portal"
+        >
+            <Image
+                src="/images/zaap/back.png"
+                alt="brakmar"
+                width="1200"
+                height="753"
+            />
+            <Image
+                className="light-zaap-aura"
+                src="/images/zaap/zaap-light-ray.png"
+                alt="aura"
+                width="695"
+                height="695"
+            />
+            <Image
+                className="light-zaap"
+                src="/images/zaap/zaap-light.png"
+                alt="portal"
+                width="416"
+                height="416"
+            />
+            <Image
+                className="default-zaap"
+                src="/images/zaap/zaap.png"
+                alt="empty cadrant"
+                width="1200"
+                height="590"
+            />
+            <Image
+                className="open-zaap"
+                src="/images/zaap/zaap-open.png"
+                alt="empty-light-cadrant"
+                width="1200"
+                height="590"
+            />
+            <Image
+                src="/images/zaap/front.png"
+                alt="front"
+                width="1200"
+                height="407"
+            />
+        </section>
         <section className="class-list">
             <h2>Classes</h2>
             <div className="class">
@@ -42,8 +84,7 @@ export default async function Home() {
             </div>
             <Image
                 src={BackgroundLadder}
-                alt="background ladder"
-            />
+                alt="background ladder"/>
         </section>
     </main>
   );

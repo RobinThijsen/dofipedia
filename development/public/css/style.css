@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-*:not(p),
-*:not(a) {
+*:not(svg) {
   font-family: "Bebas Neue", sans-serif;
 }
 
-p, a {
+p, a, strong, li, span {
   font-family: "Roboto", sans-serif;
 }
 
@@ -19,9 +18,10 @@ p, a {
 body {
   width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 body main {
-  margin-top: 70px;
+  padding-top: 70px;
   width: 100vw;
   min-height: 100vh;
 }
@@ -48,40 +48,242 @@ header {
   width: 100%;
   height: 70px;
   background: #101010;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 1fr;
   gap: 2vw;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10000;
 }
-header a {
-  color: #F9F9F9;
+header::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #96A71D;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: -1;
 }
-
-main.item {
+header ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2vw;
+}
+header ul.left {
+  justify-content: flex-start;
+}
+header ul li#listes-btn:hover menu {
+  height: 80vh;
+  transition-delay: 0s;
+}
+header ul li#listes-btn:hover menu div {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+header ul li#listes-btn:hover menu img {
+  opacity: 1;
+}
+header menu {
+  width: 100vw;
+  height: 0px;
+  background: hsla(0, 0%, 7%, 0.9);
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 70px;
+  transition: all 0.3s ease;
+  transition-delay: 0.2s;
+  display: flex;
+  gap: 1.5vw;
+}
+header menu img {
+  position: absolute;
+  opacity: 0;
+  width: 20vw !important;
+  height: auto !important;
+  right: 3vw;
+  z-index: -1;
+  bottom: 0;
+}
+header menu div {
+  padding: 3vh 3vw;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  transition: all 0.3s ease;
+  transition-delay: 0s;
+}
+header menu div ul {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style-type: disc;
+}
+header menu div ul li a {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}
+header a, header li {
+  color: #F9F9F9;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../images/background-item.jpg");
+  gap: 0.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  cursor: pointer;
+}
+header a img, header li img {
+  width: 134.7px;
+  height: 94px;
+  transform: translateY(-5px);
+}
+header a svg, header li svg {
+  fill: #F9F9F9;
+  transition: all 0.3s ease;
+}
+header a:hover, header a.active, header li:hover, header li.active {
+  color: #96A71D;
+}
+header a:hover svg, header a.active svg, header li:hover svg, header li.active svg {
+  fill: #96A71D;
+  transform: rotate(180deg);
+}
+header a.active svg, header li.active svg {
+  transform: rotate(180deg);
+}
+
+main.item {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 main.item section {
-  width: 40%;
-  height: 90%;
-  border: 2px solid #96A71D;
+  height: 100vh;
+  background: #204566;
+  color: #F9F9F9;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+main.item section a {
+  color: #2781B9;
+}
+main.item section article {
+  width: 100%;
+  padding: 3vh 2vw;
+}
+main.item section article:first-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+main.item section article figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.item section article figure img {
+  width: 150px;
+  height: 150px;
+  background: hsla(0, 0%, 7%, 0.6);
+  border-radius: 10px;
+}
+main.item section article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+main.item section article ul {
+  list-style-type: disc;
+}
+main.item section article:last-child ul {
+  list-style-type: none;
+  display: flex;
+  gap: 0.5vw;
+  position: relative;
+}
+main.item section article:last-child ul li a {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background: hsla(0, 0%, 7%, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #306595;
+}
+main.item section article:last-child ul li a span {
+  position: absolute;
+  bottom: -3em;
+  color: #F9F9F9;
+  font-size: 0.7rem;
+  width: auto;
+  padding: 0.5em;
+  background: hsla(0, 0%, 7%, 0.6);
+  border-radius: 5px;
+  opacity: 0;
+  text-align: center;
+}
+main.item section article:last-child ul li a:hover span {
+  opacity: 1;
+}
+main.item section:last-child {
+  background: hsla(0, 0%, 7%, 0.6);
 }
 
 main.home section.portal {
-  height: 753px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 0.3s ease;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.home section.portal audio {
+  position: relative;
+  z-index: 1000;
+}
+main.home section.portal img {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  transition: all 1s ease;
+}
+main.home section.portal img:first-child {
+  display: inline;
+}
+main.home section.portal img.open-zaap, main.home section.portal img.light-zaap, main.home section.portal img.light-zaap-aura {
+  opacity: 0;
+}
+main.home section.portal img.light-zaap {
+  width: 30vw;
+  top: 25vh;
+}
+main.home section.portal img.light-zaap-aura {
+  width: 60vw;
+  top: -5vh;
+}
+main.home section.portal:hover img.default-zaap {
+  opacity: 0;
+}
+main.home section.portal:hover img.open-zaap, main.home section.portal:hover img.light-zaap, main.home section.portal:hover img.light-zaap-aura {
+  opacity: 1;
+}
+main.home section.portal:hover img.light-zaap {
+  animation: infiniteLoop 15s linear infinite;
 }
 main.home section.class-list {
   background: rgb(4, 32, 7);
@@ -130,6 +332,14 @@ main.home section.ladder img {
   position: relative;
 }
 
+@keyframes infiniteLoop {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
 main.login {
   width: 100vw;
   height: auto;
@@ -249,6 +459,105 @@ main.register section.register-page div.form-register form .btn button {
 main.register section.register-page div.bg-register img {
   width: 70vw;
   height: 100vh;
+}
+
+main.listes {
+  width: 100%;
+  min-height: 100vh;
+  background: #09390d;
+}
+main.listes section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main.listes section:first-child {
+  min-height: 30vh;
+  background: hsla(0, 0%, 7%, 0.9);
+}
+main.listes section:last-child {
+  min-height: 100vh;
+}
+main.listes section ul {
+  width: 100%;
+  padding: 5vh 3vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 115px;
+}
+main.listes section ul li a {
+  width: 100px;
+  height: 100px;
+  background: hsla(0, 0%, 7%, 0.9);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border: 1px solid #96A71D;
+  transition: all 0.5s ease;
+  transition-delay: 0.3s;
+  position: absolute;
+  align-items: flex-end;
+}
+main.listes section ul li a figure {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+}
+main.listes section ul li a figure p {
+  display: none;
+  color: #F9F9F9;
+  font-size: 0.9rem;
+}
+main.listes section ul li a figure img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+main.listes section ul li a article {
+  width: 330px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  transition-delay: 0s;
+  padding: 1rem;
+  color: #F9F9F9;
+}
+main.listes section ul li a article p:last-child {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+main.listes section ul li a:hover {
+  width: 330px;
+  height: 215px;
+  z-index: 100;
+  background: hsl(0, 0%, 7%);
+  transition-delay: 0s;
+}
+main.listes section ul li a:hover figure {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+main.listes section ul li a:hover figure p {
+  display: inline;
+}
+main.listes section ul li a:hover figure img {
+  background: hsla(0, 0%, 7%, 0.9);
+  border: 1px solid #96A71D;
+}
+main.listes section ul li a:hover article {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.3s;
 }
 
 /*# sourceMappingURL=style.css.map */
