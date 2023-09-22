@@ -188,6 +188,7 @@ main.login section.login-page div.form-login form .btn button {
 main.login section.login-page div.bg-login img {
   width: 70vw;
   height: 100vh;
+  background-position: right;
 }
 
 main.register {

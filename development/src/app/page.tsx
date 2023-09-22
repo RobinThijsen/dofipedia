@@ -5,7 +5,7 @@ import BackgroundLadder from "../../public/images/background-classement.jpg"
 
 
 const getDataClass = async () => {
-    const res = await fetch(`https://api.dofusdb.fr/breeds?$limit=19`)
+    const res = await fetch(`https://api.dofusdb.fr/breeds?$limit=20`)
     return res.json()
 }
 
