@@ -1,8 +1,8 @@
 import Background from '../../../../public/images/background-item.jpg'
 import Image from "next/image"
 import Link from "next/link"
-import Sets from "@/app/item/[id]/sets"
-import Effect from "@/app/item/[id]/Effect"
+import Sets from "@/components/sets"
+import Effect from "@/components/Effect"
 
 const getData = async (id: string) => {
     const res= await fetch(`https://api.dofusdb.fr/items?id=${ id }`)
@@ -32,15 +32,17 @@ export default async function Item({ params }: { params: { id: string } }) {
                                 <li><strong>Type:</strong> <Link href={ "/listes/" + d.typeId } >{ d.type.name.fr }</Link></li>
                                 <li><strong>Prix:</strong> { d.price } <Image src="/images/kamas.png" width="14" height="18" alt="kama picture" /></li>
                             </ul>
-                            <ul>{ d.recipeIds }</ul>
                         </div>
                     </article>
-                    <article>
-                        <p><strong>Effects</strong></p>
-                        <ul>
-                            { d.effects.map(async (effect) => (<Effect effectId={effect.characteristic} effectFrom={effect.from} effectTo={effect.to} />)) }
-                        </ul>
-                    </article>
+                    { d.effects.length > 1 || (d.effects.length == 1 && d.effects[0].characteristic != -1)
+                        ? <article>
+                            <p><strong>Effects</strong></p>
+                            <ul>
+                                { d.effects.map(async (effect) => (<Effect effectId={effect.characteristic} effectFrom={effect.from} effectTo={effect.to} />)) }
+                            </ul>
+                        </article>
+                        : false
+                    }
                     <article>
                         <p><strong>Description</strong></p>
                         <p>{ d.description.fr }</p>

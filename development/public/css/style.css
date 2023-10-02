@@ -179,6 +179,92 @@ a.btn-img {
   font-size: 2rem;
 }
 
+fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+fieldset label {
+  font-size: 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  color: #F9F9F9;
+}
+fieldset input {
+  border: 2px solid #1DA78E;
+  color: #F9F9F9;
+  font-family: "Roboto", sans-serif;
+  padding: 1em;
+  transition: all 0.3s ease;
+}
+fieldset input::placeholder {
+  color: #1DA78E;
+}
+fieldset input:hover, fieldset input:focus {
+  border-color: #F9F9F9;
+}
+fieldset.red input {
+  border-color: #DE4312;
+}
+fieldset.red input::placeholder {
+  color: #DE4312;
+}
+fieldset p.error-field {
+  color: #BA7813;
+  font-size: 0.7rem;
+}
+
+footer {
+  width: 100%;
+  min-height: 20vh;
+  background: hsl(0, 0%, 7%);
+}
+footer section {
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+}
+footer section:first-child {
+  align-items: center;
+  justify-content: center;
+  background: #1D1D1D;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(49, 90, 8, 0.5) inset;
+}
+footer section:first-child ul {
+  width: 100%;
+  padding: 5vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  color: hsla(50, 34%, 58%, 0.5);
+}
+footer section:first-child ul li {
+  width: auto;
+  height: auto;
+}
+footer section:first-child ul li a {
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid hsla(50, 34%, 58%, 0.5);
+}
+footer section:first-child ul li a svg {
+  width: auto;
+  height: 1.5rem;
+  color: hsla(50, 34%, 58%, 0.5);
+}
+footer section:first-child ul li a:hover {
+  background: hsla(50, 34%, 58%, 0.5);
+  border-color: transparent;
+}
+footer section:first-child ul li a:hover svg {
+  color: #1D1D1D;
+}
 main.item {
   height: 100vh;
   display: grid;
@@ -376,7 +462,7 @@ main.home section.ladder img {
     transform: rotate(720deg);
   }
 }
-main.login {
+main.login, main.register {
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -384,7 +470,7 @@ main.login {
   background-repeat: no-repeat;
   padding: 0;
 }
-main.login section {
+main.login section, main.register section {
   width: 40%;
   height: 100%;
   background: #0A5245;
@@ -396,66 +482,39 @@ main.login section {
   color: #F9F9F9;
   padding: 0 8vw;
 }
-main.login section h2 {
+main.login section h2, main.register section h2 {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-main.login section h2::after {
+main.login section h2::after, main.register section h2::after {
   content: "";
   width: 100%;
   height: 2px;
   background: #F9F9F9;
 }
-main.login section form {
+main.login section form, main.register section form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 4vh;
+  gap: 1vh;
+  padding: 0 2vw;
 }
-main.login section form fieldset {
-  width: 100%;
-  height: auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-main.login section form fieldset label {
-  position: absolute;
-  top: 0.7rem;
-  left: 1.5em;
-  color: #1DA78E;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  background: #0A5245;
-  padding: 0.3em;
-}
-main.login section form fieldset input {
-  width: 100%;
-  border: 2px solid #1DA78E;
-  padding: 1rem;
-  color: #F9F9F9;
-  transition: all 0.3s ease;
-}
-main.login section form fieldset input:hover, main.login section form fieldset input:focus {
-  border-color: #F9F9F9;
-}
-main.login section form fieldset input:focus ~ label, main.login section form fieldset input:not([value=""]) ~ label {
-  top: -0.7rem;
-  left: 1.1rem;
-  color: #F9F9F9;
-}
-main.login section div {
+main.login section div, main.register section div {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.8rem;
 }
-main.login section div a {
+main.login section div a, main.register section div a {
   color: #1DA78E;
+  margin-left: 0.3rem;
 }
-main.login section button {
+main.login section div a:hover, main.register section div a:hover {
+  text-decoration: underline;
+}
+main.login section button, main.register section button {
   background: #1DA78E;
   padding: 1rem;
   border: 2px solid #1DA78E;
@@ -463,103 +522,32 @@ main.login section button {
   cursor: pointer;
   font-size: 1.2rem;
   color: #F9F9F9;
+  border-radius: none;
+  font-family: "Bebas Neue", sans-serif;
 }
-main.login section button:hover {
+main.login section button:hover, main.register section button:hover {
   background: transparent;
+  border: 2px solid #1DA78E;
+}
+main.login section button.red, main.register section button.red {
+  background: #DE4312;
+  border-color: #DE4312;
+}
+main.login section button.red:hover, main.register section button.red:hover {
+  background: transparent;
+  border-color: #DE4312;
 }
 
 main.register {
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: right;
-  background-repeat: no-repeat;
-  padding: 0;
+  background-position: left;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 }
 main.register section {
-  width: 40%;
-  height: 100%;
   background: #943801;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5vh;
-  color: #F9F9F9;
-  padding: 0 8vw;
 }
-main.register section h2 {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-main.register section h2::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background: #F9F9F9;
-}
-main.register section form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 4vh;
-}
-main.register section form fieldset {
-  width: 100%;
-  height: auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-main.register section form fieldset label {
-  position: absolute;
-  top: 0.7rem;
-  left: 1.5em;
+main.register section form div a {
   color: #DE4312;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  background: #943801;
-  padding: 0.3em;
-}
-main.register section form fieldset input {
-  width: 100%;
-  border: 2px solid #DE4312;
-  padding: 1rem;
-  color: #F9F9F9;
-  transition: all 0.3s ease;
-}
-main.register section form fieldset input:hover, main.register section form fieldset input:focus {
-  border-color: #F9F9F9;
-}
-main.register section form fieldset input:focus ~ label, main.register section form fieldset input:not([value=""]) ~ label {
-  top: -0.7rem;
-  left: 1.1rem;
-  color: #F9F9F9;
-}
-main.register section div {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-}
-main.register section div a {
-  color: #DE4312;
-}
-main.register section button {
-  background: #F77413;
-  padding: 1rem;
-  border: 2px solid #F77413;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: #F9F9F9;
-}
-main.register section button:hover {
-  background: transparent;
 }
 
 main.listes {

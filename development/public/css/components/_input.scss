@@ -1,0 +1,44 @@
+fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+
+  label {
+    font-size: 1rem;
+    font-family: "Bebas Neue", sans-serif;
+    color: $white;
+  }
+
+  input {
+    border: 2px solid $green-blue-light;
+    color: $white;
+    font-family: "Roboto", sans-serif;
+    padding: 1em;
+    transition: $tr-3-a;
+
+    &::placeholder {
+      color: $green-blue-light;
+    }
+
+    &:hover, &:focus {
+      border-color: $white;
+    }
+  }
+
+  &.red {
+
+    input {
+      border-color: $dark-red;
+
+      &::placeholder {
+        color: $dark-red;
+      }
+    }
+  }
+
+  p.error-field {
+    color: $pal-red;
+    font-size: .7rem;
+  }
+}

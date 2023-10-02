@@ -1,0 +1,63 @@
+footer {
+  width: 100%;
+  min-height: 20vh;
+  background: $dark-background;
+
+  section {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+
+    &:first-child {
+      align-items: center;
+      justify-content: center;
+      background: $background;
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 20px 0px rgba(49, 90, 8, 0.50) inset;
+
+      ul {
+        width: 100%;
+        padding: 5vh 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2vw;
+        color: $pal-green-50;
+
+        li {
+          width: auto;
+          height: auto;
+
+          a {
+            width: 2.5rem;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid $pal-green-50;
+
+            svg {
+              width: auto;
+              height: 1.5rem;
+              color: $pal-green-50;
+            }
+
+            &:hover {
+              background: $pal-green-50;
+              border-color: transparent;
+
+              svg {
+                color: $background;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child {
+
+    }
+  }
+}

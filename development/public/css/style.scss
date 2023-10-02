@@ -1,4 +1,4 @@
 @import 'vendor/_variables';
 @import 'basis/_fonts', 'basis/_resets';
-@import 'components/_header', 'components/_button-img';
-@import 'pages/_item', 'pages/_home', 'pages/_login', 'pages/_register', 'pages/_listes';
+@import 'components/_header', 'components/_button-img', "components/_input", "components/_footer";
+@import 'pages/_item', 'pages/_home', 'pages/_auth', 'pages/_listes';

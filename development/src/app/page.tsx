@@ -64,8 +64,8 @@ export default async function Home() {
         <section className="class-list">
             <h2>Classes</h2>
             <div className="class">
-                {data.data.map((i) => (
-                    <figure>
+                {data.data.map((i, index) => (
+                    <figure key={index}>
                         <Image
                             src={`/images/classes/${i.id}.jpg`}
                             alt="classe"

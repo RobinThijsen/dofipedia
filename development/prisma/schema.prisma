@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model dofipedia_user {
+  user_id  Int    @id @default(autoincrement())
+  name     String @unique @db.VarChar(60)
+  pseudo   String @db.VarChar(60)
+  email    String @unique @db.VarChar(255)
+  password String
+  stuffs   dofipedia_stuff[]
+  comments dofipedia_comment[]
+}
+
+model dofipedia_stuff {
+  stuff_id    Int  @id @default(autoincrement())
+  title       String @db.VarChar(255)
+  hat_id      Int
+  cape_id     Int
+  belt_id     Int
+  boot_id     Int
+  charm_id    Int
+  ring1_id    Int
+  ring2_id    Int
+  shield_id   Int
+  weapon_id   Int
+  trophy1_id  Int
+  trophy2_id  Int
+  trophy3_id  Int
+  trophy4_id  Int
+  trophy5_id  Int
+  trophy6_id  Int
+  familier_id Int
+  mount_id    Int
+  author      dofipedia_user @relation(fields: [author_id], references: [user_id])
+  author_id   Int
+  comments    dofipedia_comment[]
+}
+
+model dofipedia_comment {
+  comment_id Int @id @default(autoincrement())
+  content    String @db.VarChar(255)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  author     dofipedia_user @relation(fields: [author_id], references: [user_id])
+  author_id  Int
+  anwser     dofipedia_anwser[]
+  item_id    Int?
+  stuff      dofipedia_stuff? @relation(fields: [stuff_id], references: [stuff_id])
+  stuff_id   Int
+}
+
+model dofipedia_anwser {
+  anwser_id  Int @id @default(autoincrement())
+  content    String @db.VarChar(255)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  comments   dofipedia_comment @relation(fields: [comment_id], references: [comment_id])
+  comment_id Int
+}
