@@ -9,7 +9,7 @@ const getData = async (id: string) => {
     return res.json()
 }
 
-export default async function Item({ params }: { params: { id: string } }) {
+export default async function Item({ params }: { params: { id: string } }): Promise<JSX.Element> {
     const data: Promise<any> = await getData(params.id)
 
     const styling= {
@@ -19,7 +19,7 @@ export default async function Item({ params }: { params: { id: string } }) {
     return (
         <main className="item" style={styling}>
             <section>
-                {data.data.map((d) => (
+                {data.data.map((d: { imgset: [{ url: string }] | undefined, name: { fr: string }, level: string | number, price: string | number, typeId: string | number, type: { name: { fr: string }}, effects: [{ from: string | number, to: string | number, characteristic: string | number }], description: { fr: string }, itemSetId: string | number } ) => (
                 <>
                     <article>
                         <figure>
@@ -38,7 +38,7 @@ export default async function Item({ params }: { params: { id: string } }) {
                         ? <article>
                             <p><strong>Effects</strong></p>
                             <ul>
-                                { d.effects.map(async (effect) => (<Effect effectId={effect.characteristic} effectFrom={effect.from} effectTo={effect.to} />)) }
+                                { d.effects.map(async (effect: { from: string | number, to: string | number, characteristic: string | number }): Promise<JSX.Element> => (<Effect effectId={ effect.characteristic } effectFrom={effect.from} effectTo={effect.to} />)) }
                             </ul>
                         </article>
                         : false

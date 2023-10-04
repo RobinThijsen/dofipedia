@@ -6,10 +6,11 @@ main.home {
 
   section.portal {
     width: 100%;
-    min-height: 90vh;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     a.btn-img {
       opacity: 0;
@@ -27,22 +28,18 @@ main.home {
       bottom: 0;
       transition: all 1s ease;
 
-      &:first-child {
-        display: inline;
-      }
-
       &.open-zaap, &.light-zaap, &.light-zaap-aura {
         opacity: 0;
       }
 
       &.light-zaap {
         width: 30vw;
-        top: 25vh;
+        bottom: 15vh;
       }
 
       &.light-zaap-aura {
         width: 60vw;
-        top: -5vh;
+        top: 5vh;
       }
     }
 

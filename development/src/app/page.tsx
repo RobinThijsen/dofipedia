@@ -54,6 +54,7 @@ export default async function Home() {
                 height="590"
             />
             <Image
+                className="front"
                 src="/images/zaap/front.png"
                 alt="front"
                 width="1200"

@@ -75,16 +75,16 @@ header ul {
 header ul.left {
   justify-content: flex-start;
 }
-header ul li#listes-btn:hover menu {
+header ul li:hover menu {
   height: 80vh;
   transition-delay: 0s;
 }
-header ul li#listes-btn:hover menu div {
+header ul li:hover menu div {
   visibility: visible;
   opacity: 1;
   transition-delay: 0.2s;
 }
-header ul li#listes-btn:hover menu img {
+header ul li:hover menu img {
   opacity: 1;
 }
 header menu {
@@ -355,10 +355,11 @@ main.home {
 }
 main.home section.portal {
   width: 100%;
-  min-height: 90vh;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 main.home section.portal a.btn-img {
   opacity: 0;
@@ -374,19 +375,16 @@ main.home section.portal img {
   bottom: 0;
   transition: all 1s ease;
 }
-main.home section.portal img:first-child {
-  display: inline;
-}
 main.home section.portal img.open-zaap, main.home section.portal img.light-zaap, main.home section.portal img.light-zaap-aura {
   opacity: 0;
 }
 main.home section.portal img.light-zaap {
   width: 30vw;
-  top: 25vh;
+  bottom: 15vh;
 }
 main.home section.portal img.light-zaap-aura {
   width: 60vw;
-  top: -5vh;
+  top: 5vh;
 }
 main.home section.portal:hover img.default-zaap {
   opacity: 0;
@@ -553,100 +551,107 @@ main.register section form div a {
 main.listes {
   width: 100%;
   min-height: 100vh;
-  background: #09390d;
+  background: #1D1D1D;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
 }
 main.listes section {
+  height: auto;
+  padding: 3vh 2vw;
+}
+main.listes section:first-child {
+  width: calc(30% - 2vw);
+  height: calc(100vh - 100px - 2vw);
+  position: sticky;
+  top: 95px;
+  left: 2vw;
+  background: hsl(0, 0%, 7%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #F9F9F9;
+}
+main.listes section:first-child h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 2rem;
+}
+main.listes section:first-child h2::after {
+  content: "";
   width: 100%;
+  height: 2px;
+  background: #F9F9F9;
+}
+main.listes section.list-container {
+  width: 70%;
+}
+main.listes section.list-container ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vw;
+}
+main.listes section.list-container ul li {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
-main.listes section:first-child {
-  min-height: 30vh;
-  background: hsla(0, 0%, 7%, 0.9);
-}
-main.listes section:last-child {
-  min-height: 100vh;
-}
-main.listes section ul {
+main.listes section.list-container ul li a {
   width: 100%;
-  padding: 5vh 3vw;
+  padding: 2rem;
+  background: hsl(0, 0%, 7%);
+  color: hsla(0, 0%, 98%, 0.2);
   display: flex;
-  flex-wrap: wrap;
-  gap: 115px;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid transparent;
 }
-main.listes section ul li a {
-  width: 100px;
-  height: 100px;
-  background: hsla(0, 0%, 7%, 0.9);
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  border: 1px solid #96A71D;
-  transition: all 0.5s ease;
-  transition-delay: 0.3s;
-  position: absolute;
-  align-items: flex-end;
-}
-main.listes section ul li a figure {
-  width: 100px;
-  height: 100px;
+main.listes section.list-container ul li a figure {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  aspect-ratio: 1/0.6;
+  position: relative;
+}
+main.listes section.list-container ul li a figure::after {
   position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.3s ease;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: hsla(0, 0%, 98%, 0.2);
+  bottom: 0;
 }
-main.listes section ul li a figure p {
-  display: none;
-  color: #F9F9F9;
-  font-size: 0.9rem;
+main.listes section.list-container ul li a figure img {
+  width: 30%;
+  aspect-ratio: 1/1;
 }
-main.listes section ul li a figure img {
-  width: 70px;
-  height: 70px;
-  border-radius: 10px;
+main.listes section.list-container ul li a article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
-main.listes section ul li a article {
-  width: 330px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease;
-  transition-delay: 0s;
-  padding: 1rem;
-  color: #F9F9F9;
-}
-main.listes section ul li a article p:last-child {
+main.listes section.list-container ul li a article p:last-child {
   overflow: hidden;
+  width: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-main.listes section ul li a:hover {
-  width: 330px;
-  height: 215px;
-  z-index: 100;
-  background: hsl(0, 0%, 7%);
-  transition-delay: 0s;
+main.listes section.list-container ul li a svg {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 20px;
+  aspect-ratio: 1/1;
 }
-main.listes section ul li a:hover figure {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-main.listes section ul li a:hover figure p {
-  display: inline;
-}
-main.listes section ul li a:hover figure img {
-  background: hsla(0, 0%, 7%, 0.9);
-  border: 1px solid #96A71D;
-}
-main.listes section ul li a:hover article {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.3s;
+main.listes section.list-container ul li a:hover {
+  border-color: hsla(0, 0%, 98%, 0.2);
+  color: hsla(50, 34%, 58%, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */

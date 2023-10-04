@@ -1,110 +1,117 @@
 main.listes {
   width: 100%;
   min-height: 100vh;
-  background: $dark-green;
+  background: $background;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
 
   section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    height: auto;
+    padding: 3vh 2vw;
 
     &:first-child {
-      min-height: 30vh;
-      background: $dark-background-90;
-    }
-
-    &:last-child {
-      min-height: 100vh;
-    }
-
-    ul {
-      width: 100%;
-      padding: 5vh 3vw;
+      width: calc(30% - 2vw);
+      height: calc(100vh - 100px - 2vw);
+      position: sticky;
+      top: 95px;
+      left: 2vw;
+      background: $dark-background;
       display: flex;
-      flex-wrap: wrap;
-      gap: 115px;
+      flex-direction: column;
+      align-items: center;
+      color: $white;
 
-      li a {
-        width: 100px;
-        height: 100px;
-        background: $dark-background-90;
-        border-radius: 10px;
+      h2 {
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+        font-size: 2rem;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background: $white;
+        }
+      }
+    }
+
+    &.list-container {
+      width: 70%;
+
+      ul {
         display: grid;
-        grid-template-columns: 30% 70%;
-        border: 1px solid $green-border;
-        transition: $tr-5-a;
-        transition-delay: .3s;
-        position: absolute;
-        align-items: flex-end;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2vw;
 
-        figure {
-          width: 100px;
-          height: 100px;
+        li {
+          width: 100%;
+          position: relative;
+          overflow: hidden;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          top: 0;
-          left: 0;
-          transition: $tr-3-a;
+          flex-direction: column;
 
-          p {
-            display: none;
-            color: $white;
-            font-size: .9rem;
-          }
-
-          img {
-            width: 70px;
-            height: 70px;
-            border-radius: 10px;
-          }
-        }
-
-        article {
-          width: 330px;
-          opacity: 0;
-          visibility: hidden;
-          transition: $tr-5-a;
-          transition-delay: 0s;
-          padding: 1rem;
-          color: $white;
-
-          p:last-child {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-          }
-        }
-
-        &:hover {
-          width: 330px;
-          height: 215px;
-          z-index: 100;
-          background: $dark-background;
-          transition-delay: 0s;
-
-          figure {
+          a {
             width: 100%;
+            padding: 2rem;
+            background: $dark-background;
+            color: $white-border-20;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-around;
+            gap: 2rem;
+            border: 1px solid transparent;
 
-            p {
-              display: inline;
+            figure {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              aspect-ratio: 1/.6;
+              position: relative;
+
+              &::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 1px;
+                background: $white-border-20;
+                bottom: 0;
+              }
+
+              img {
+                width: 30%;
+                aspect-ratio: 1/1;
+              }
             }
 
-            img {
-              background: $dark-background-90;
-              border: 1px solid $green-border;
-            }
-          }
+            article {
+              display: flex;
+              flex-direction: column;
+              gap: .2rem;
 
-          article {
-            opacity: 1;
-            visibility: visible;
-            transition-delay: .3s;
+              p:last-child {
+                overflow: hidden;
+                width: 100%;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+              }
+            }
+
+            svg {
+              position: absolute;
+              top: 1rem;
+              right: 1rem;
+              width: 20px;
+              aspect-ratio: 1/1;
+            }
+
+            &:hover {
+              border-color: $white-border-20;
+              color: $pal-green-50;
+            }
           }
         }
       }

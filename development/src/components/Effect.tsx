@@ -1,18 +1,18 @@
-const getEffect = async (effectId: string) => {
+const getEffect = async (effectId: string | number) => {
     const res: Response = await fetch(`https://api.dofusdb.fr/characteristics?id=${effectId}`)
     return res.json()
 }
 
-const getName = async (effectId: string) => {
+const getName = async (effectId: string | number): Promise<string[]> => {
     const effect = await getEffect(effectId)
-    const name = []
-    effect.data.map((ef) => {
+    const name: string[] = []
+    effect.data.map((ef: { name: { fr: string } }): void => {
         name.push(ef.name.fr)
     })
     return name
 }
 
-export default async function Effect(props: { effectFrom: string, effectTo: string, effectId: string}) {
+export default async function Effect(props: { effectFrom: string | number, effectTo: string | number, effectId: string | number }): Promise<JSX.Element> {
 
     return (
         <>
