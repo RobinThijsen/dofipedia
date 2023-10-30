@@ -55,33 +55,6 @@ main.login, main.register {
         }
       }
     }
-
-    button {
-      background: $green-blue-light;
-      padding: 1rem;
-      border: 2px solid $green-blue-light;
-      transition: $tr-3-a;
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: $white;
-      border-radius: none;
-      font-family: "Bebas Neue", sans-serif;
-
-      &:hover {
-        background: transparent;
-        border: 2px solid $green-blue-light;
-      }
-
-      &.red {
-        background: $dark-red;
-        border-color: $dark-red;
-
-        &:hover {
-          background: transparent;
-          border-color: $dark-red;
-        }
-      }
-    }
   }
 }
 

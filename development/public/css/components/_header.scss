@@ -29,6 +29,16 @@ header {
 
     &.left {
       justify-content: flex-start;
+      position: relative;
+
+      li.absolute {
+        position: absolute;
+        right: 2vw;
+
+        &:hover svg {
+          transform: rotate(0deg);
+        }
+      }
     }
 
     li:hover menu {

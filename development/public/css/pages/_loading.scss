@@ -1,0 +1,51 @@
+main.loading {
+  width: 100%;
+  height: 100%;
+  background: $dark-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  h2 {
+    color: $white;
+    font-size: 3.5rem;
+  }
+
+  figure {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    svg {
+      width: 50px;
+      aspect-ratio: 1/1;
+      animation-name: infiniteLoop;
+      animation-duration: 2s;
+
+      &:first-child {
+
+      }
+
+      &:nth-child(2) {
+        animation-delay: .5s;
+      }
+
+      &:last-child {
+        animation-delay: 1s;
+      }
+    }
+  }
+}
+
+@keyframes infiniteLoop {
+
+  from {
+    fill: $gray;
+  }
+
+  to {
+    fill: $green-border;
+  }
+}

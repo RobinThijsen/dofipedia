@@ -21,8 +21,8 @@ model dofipedia_user {
 }
 
 model dofipedia_stuff {
-  stuff_id    Int  @id @default(autoincrement())
-  title       String @db.VarChar(255)
+  stuff_id    Int           @id @default(autoincrement())
+  title       String        @db.VarChar(255)
   hat_id      Int
   cape_id     Int
   belt_id     Int
@@ -42,27 +42,29 @@ model dofipedia_stuff {
   mount_id    Int
   author      dofipedia_user @relation(fields: [author_id], references: [user_id])
   author_id   Int
+  breed_id    Int
+  type_id     Int
   comments    dofipedia_comment[]
 }
 
 model dofipedia_comment {
-  comment_id Int @id @default(autoincrement())
-  content    String @db.VarChar(255)
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  author     dofipedia_user @relation(fields: [author_id], references: [user_id])
+  comment_id Int               @id @default(autoincrement())
+  content    String            @db.VarChar(255)
+  created_at DateTime          @default(now())
+  updated_at DateTime?         @updatedAt
+  author     dofipedia_user    @relation(fields: [author_id], references: [user_id])
   author_id  Int
   anwser     dofipedia_anwser[]
   item_id    Int?
-  stuff      dofipedia_stuff? @relation(fields: [stuff_id], references: [stuff_id])
-  stuff_id   Int
+  stuff      dofipedia_stuff?  @relation(fields: [stuff_id], references: [stuff_id])
+  stuff_id   Int?
 }
 
 model dofipedia_anwser {
-  anwser_id  Int @id @default(autoincrement())
-  content    String @db.VarChar(255)
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  anwser_id  Int               @id @default(autoincrement())
+  content    String            @db.VarChar(255)
+  created_at DateTime          @default(now())
+  updated_at DateTime?         @updatedAt
   comments   dofipedia_comment @relation(fields: [comment_id], references: [comment_id])
   comment_id Int
 }

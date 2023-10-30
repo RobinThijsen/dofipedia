@@ -1,28 +1,24 @@
-import Link from "next/link";
-const getData = async (itemId: string) => {
-    const res = await fetch(`https://api.dofusdb.fr/items?id=${itemId}`)
-    return res.json()
-}
+import Link from "next/link"
 
-export default async function Item(props) {
-    const data = getData(props.itemId)
-    console.log(data)
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+
+export default function Item(props: { id: string, img: string, name: string, level: string, type: string, description: string }) {
 
     return (
         <li>
-            {
-                data.data.map((item) => (
-                <Link href={`/item/${item.id}`}>
-                    <figure>
-                        <img src={ item.imgset[1].url } alt="image item" />
-                        <p><strong>{ item.name.fr }</strong></p>
-                    </figure>
-                    <article>
-                        <p><strong>Type:</strong> { item.type.name.fr }</p>
-                        <p><strong>Description:</strong> { item.description.fr }</p>
-                    </article>
-                </Link>
-                ))}
+            <Link href={`/item/${props.id }`}>
+                <figure>
+                    <img src={ props.img } alt="image item" />
+                </figure>
+                <article>
+                    <p><strong>{ props.name }</strong></p>
+                    <p><strong>Niveau:</strong> { props.level }</p>
+                    <p><strong>Type:</strong> { props.type }</p>
+                    <p><strong>Description:</strong> { props.description }</p>
+                </article>
+                <FontAwesomeIcon icon={ faArrowUpRightFromSquare } />
+            </Link>
         </li>
     )
 }

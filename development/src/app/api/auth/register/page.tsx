@@ -1,6 +1,3 @@
-'use client'
-import * as zod from "zod"
-
 import Link from "next/link"
 import Image from "next/image"
 
@@ -9,9 +6,8 @@ import Button from "@/components/Button"
 
 import BackgroundImage from "../../../../../public/images/BG-register.jpeg"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { useSession } from "next-auth/react"
+import { redirect } from "next/navigation"
+import { POST } from "@/app/api/user/route"
 
 const matchingEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -23,78 +19,26 @@ const matchingPassword = (password: string): { message: string; status: number }
     else return true
 }
 
-export default function Page() {
-    // create router and session to check if user connect
-    //      redirect if true
-    const router = useRouter()
-    const { data: session } = useSession()
-    if (session) router.push('/')
+export default function Page(): JSX.Element {
 
-    const [errorEmail, setErrorEmail] = useState("")
-    const [errorPassword, setErrorPassword] = useState("")
-    const [error, setError] = useState("")
-    const [userInfos, setUserInfos] = useState({ name: "", pseudo: "", email: "", password: "", confirmPassword: ""})
 
-    const handleChangeName = e => {
-        setUserInfos({ ...userInfos, name: e.target.value })
-    }
-
-    const handleChangeEmail = e => {
-        if (e.target.value === "") setErrorEmail("")
-        else {
-            if (matchingEmail(e.target.value)) {
-                setUserInfos({...userInfos, email: e.target.value})
-                setErrorEmail("")
-            } else setErrorEmail("Email non valid")
-        }
-    }
-
-    const handleChangePseudo = e => {
-        setUserInfos({ ...userInfos, pseudo: e.target.value })
-    }
-
-    const handleChangePassword = e => {
-        const res = matchingPassword(e.target.value)
-
-        if (e.target.value === "") setErrorPassword("")
-        else {
-            if (typeof res == "boolean") {
-                setUserInfos({...userInfos, password: e.target.value})
-                setErrorPassword("")
-            } else setErrorPassword(res.message)
-        }
-    }
-
-    const handleChangeConfirmPassword = e => {
-        setUserInfos({ ...userInfos, confirmPassword: e.target.value })
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+    const handleSubmit = async (formData: FormData) => {
+        "use server"
 
         const data = {
-            name: userInfos.name,
-            pseudo: userInfos.pseudo,
-            email: userInfos.email,
-            password: userInfos.password,
-            confirmPassword: userInfos.confirmPassword
+            name: formData.get('name'),
+            pseudo: formData.get('pseudo'),
+            email: formData.get('email'),
+            password: formData.get('password'),
+            confirmPassword: formData.get('cPassword')
         }
 
-        const res: Response = await fetch('/api/user', {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
+        const res: Response = await POST({
             body: JSON.stringify(data)
         })
 
-         if (res.ok) {
-             router.push('/api/auth/login')
-         } else {
-             if (res.status == 500) setError("Une erreur à été rencontré")
-             else if (res.status == 409) setError("Cet utilisateur existe déjà")
-         }
+         if (res.ok) redirect('/api/login')
+         else console.log(res.json())
     }
 
     const styling = {
@@ -106,45 +50,37 @@ export default function Page() {
             <section>
                 <Link href={`/`}><Image src="/images/logo.png" alt="logo dofipedia" width={150} height={100}/></Link>
                 <h2>Nous rejoindre</h2>
-                <form onSubmit={handleSubmit}>
+                <form action={handleSubmit}>
                     <Fieldset
                         variant="red"
                         label="Nom"
-                        onChangeFunction={ handleChangeName }
                         type="text"
                         id="name"
                         placeholder="John Smith" />
                     <Fieldset
                         variant="red"
                         label="Pseudo"
-                        onChangeFunction={ handleChangePseudo }
                         type="text"
                         id="pseudo"
                         placeholder="JJSmith" />
                     <Fieldset
-                        errorValue={ errorEmail }
                         variant="red"
-                        onChangeFunction={ handleChangeEmail }
                         id="email"
                         type="email"
                         label="Email"
                         placeholder="johnsmith@gmail.com" />
                     <Fieldset
-                        errorValue={ errorPassword }
                         variant="red"
-                        onChangeFunction={ handleChangePassword }
                         id="password"
                         type="password"
                         label="Mot de passe"
                         placeholder="***********"/>
                     <Fieldset
                         variant="red"
-                        onChangeFunction={ handleChangeConfirmPassword }
                         id="cPassword"
                         type="password"
                         label="Confirme ton mot de passe"
                         placeholder="***********"/>
-                    <p className="error-field">{ error }</p>
                     <div>
                         <p>Pas encore inscrit(e) ?<Link href="/api/auth/login">Me connecter</Link></p>
                     </div>
